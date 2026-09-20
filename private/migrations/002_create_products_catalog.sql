@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS products_catalog (
+  product_id VARCHAR(64) NOT NULL,
+  sku VARCHAR(128) NULL,
+  name VARCHAR(512) NOT NULL,
+  document_name VARCHAR(512) NULL,
+  supplier VARCHAR(255) NULL,
+  manufacturer VARCHAR(255) NULL,
+  category_id VARCHAR(64) NULL,
+  category_name VARCHAR(255) NULL,
+  category_path VARCHAR(1024) NULL,
+  price DECIMAL(12,2) NULL,
+  discount_price DECIMAL(12,2) NULL,
+  cost_price DECIMAL(12,2) NULL,
+  image_url TEXT NULL,
+  source VARCHAR(64) NOT NULL DEFAULT 'salesdrive_xlsx',
+  imported_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (product_id),
+  KEY idx_products_catalog_sku (sku),
+  KEY idx_products_catalog_category_id (category_id),
+  KEY idx_products_catalog_category_name (category_name),
+  KEY idx_products_catalog_supplier (supplier),
+  KEY idx_products_catalog_manufacturer (manufacturer)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

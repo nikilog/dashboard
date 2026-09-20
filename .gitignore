@@ -1,0 +1,26 @@
+# === БАЗОВАЯ СТРУКТУРА ===
+# Игнорируем всё в папке html, кроме папки dashboard
+html/*
+!html/dashboard/
+
+# === ПАПКА HTML/DASHBOARD ===
+# Логи и временные файлы редактора
+html/dashboard/*.log
+html/dashboard/*.save
+# html/dashboard/config.php # Раскомментируй эту строку, если в дашборде тоже есть конфиг с паролями
+
+# === ПАПКА PRIVATE ===
+# Данные, кэш и временные выгрузки
+private/analytics_ready.json
+private/catalog_cache.json
+private/suppliers_cache.json
+private/export.xlsx
+private/export.xml
+
+# Резервные копии и временные файлы
+private/backup/
+private/*.save
+
+# Конфиги с доступами и сторонние библиотеки
+private/APIKEY.txt
+private/vendor/
