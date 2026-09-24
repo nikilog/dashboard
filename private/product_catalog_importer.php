@@ -87,6 +87,17 @@ function import_products_catalog_from_xlsx(PDO $pdo, string $xlsxPath): array
         throw new RuntimeException('Missing XLSX columns: ' . implode(', ', $missingHeaders));
     }
 
+    $hasProducts = false;
+    foreach ($rows as $row) {
+        if (product_catalog_text(product_catalog_cell($row, $columns, 'ID товару/послуги')) !== null) {
+            $hasProducts = true;
+            break;
+        }
+    }
+    if (!$hasProducts) {
+        throw new RuntimeException('XLSX file has no products with an ID. Existing catalog was not changed.');
+    }
+
     $sql = "INSERT INTO products_catalog (
                 product_id, sku, name, document_name, supplier, manufacturer,
                 category_id, category_name, category_path,
@@ -118,8 +129,12 @@ function import_products_catalog_from_xlsx(PDO $pdo, string $xlsxPath): array
 
     $processed = 0;
     $skipped = 0;
+    $duplicateIds = 0;
+    $seenIds = [];
     $pdo->beginTransaction();
     try {
+        // DELETE is transactional for InnoDB: a failed import restores the old catalog.
+        $pdo->exec('DELETE FROM products_catalog');
         foreach ($rows as $row) {
             $productId = product_catalog_text(product_catalog_cell($row, $columns, 'ID товару/послуги'));
             if ($productId === null) {
@@ -147,11 +162,16 @@ function import_products_catalog_from_xlsx(PDO $pdo, string $xlsxPath): array
                 ':cost_price' => product_catalog_money(product_catalog_cell($row, $columns, 'Собівартість')),
                 ':image_url' => product_catalog_text(product_catalog_cell($row, $columns, 'Зображення')),
             ]);
-            $processed++;
+            if (isset($seenIds[$productId])) {
+                $duplicateIds++;
+            } else {
+                $seenIds[$productId] = true;
+                $processed++;
+            }
         }
         $pdo->commit();
     } catch (Throwable $e) {
-        $pdo->rollBack();
+        if ($pdo->inTransaction()) $pdo->rollBack();
         throw $e;
     }
 
@@ -161,5 +181,6 @@ function import_products_catalog_from_xlsx(PDO $pdo, string $xlsxPath): array
     return [
         'processed' => $processed,
         'skipped' => $skipped,
+        'duplicate_ids' => $duplicateIds,
     ];
 }

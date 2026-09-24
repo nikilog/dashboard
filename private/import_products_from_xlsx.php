@@ -29,3 +29,4 @@ $result = import_products_catalog_from_xlsx($pdo, $xlsxPath);
 echo "Done.\n";
 echo "Processed: {$result['processed']}\n";
 echo "Skipped: {$result['skipped']}\n";
+echo "Duplicate IDs in XLSX: {$result['duplicate_ids']}\n";

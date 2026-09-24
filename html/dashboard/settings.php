@@ -223,7 +223,7 @@
               <button id="uploadProductsBtn" class="btn" type="button">Загрузить товары</button>
             </div>
             <div class="settings-help" style="margin-top:12px;">
-              После загрузки файл обновляет справочник товаров по ID товара. Продажи и прибыль считаются из заказов, а справочник даёт название, категорию, поставщика, производителя и текущие цены.
+              Загружайте полный экспорт SalesDrive: файл полностью заменяет справочник товаров. Продажи и прибыль считаются из заказов, а справочник даёт название, категорию, поставщика, производителя и текущие цены.
             </div>
           </div>
         </div>
@@ -436,7 +436,7 @@ $('uploadProductsBtn').addEventListener('click', async () => {
     showMsg('Загружаю товары, подожди немного...');
     const result = await api(null, form);
     const imported = result.import || {};
-    showMsg(`Товары обновлены. Обработано: ${imported.processed || 0}, пропущено: ${imported.skipped || 0}.`);
+    showMsg(`Справочник заменён. Товаров: ${imported.processed || 0}, строк без ID: ${imported.skipped || 0}, повторных ID в файле: ${imported.duplicate_ids || 0}.`);
     input.value = '';
     await loadState(state.field);
   } catch (e) {
