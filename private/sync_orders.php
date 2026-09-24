@@ -2,7 +2,8 @@
 // Safety sync for orders changed while webhook/server was unavailable.
 // Usage:
 //   php sync_orders.php
-//   php sync_orders.php 2026-07-01T00:00:00 2026-07-01T23:59:59
+//   php sync_orders.php 2026-08-01T00:00:00
+// The date argument starts or resumes a catch-up window from that date.
 
 if (php_sapi_name() !== 'cli') {
     http_response_code(403);
@@ -17,7 +18,9 @@ $config = require __DIR__ . '/config.php';
 require_once __DIR__ . '/salesdrive_order_mapper.php';
 
 $stateFile = __DIR__ . '/sync_orders_state.json';
-$limit = 41;
+$limit = 100;
+$maxPagesPerRun = 10;
+$minRequestIntervalSeconds = 120;
 $overlapSeconds = 3600;
 $defaultLookbackSeconds = 2 * 86400;
 
@@ -45,8 +48,10 @@ function sync_load_state($path) {
 
 function sync_save_state($path, array $state) {
     $tmp = $path . '.tmp';
-    file_put_contents($tmp, json_encode($state, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
-    rename($tmp, $path);
+    $json = json_encode($state, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    if ($json === false || file_put_contents($tmp, $json) === false || !rename($tmp, $path)) {
+        throw new RuntimeException('Cannot save sync state');
+    }
 }
 
 function sync_build_order_list_url($baseUrl, $from, $to, $page, $limit) {
@@ -55,6 +60,7 @@ function sync_build_order_list_url($baseUrl, $from, $to, $page, $limit) {
         'limit' => $limit,
         'filter[updateAt][from]' => $from,
         'filter[updateAt][to]' => $to,
+        'filter[statusId]' => '__ALL__',
     ];
 
     $pairs = [];
@@ -119,34 +125,61 @@ function sync_merge_with_existing(PDO $pdo, array $ord) {
     return $merged;
 }
 
-$manualFrom = $argv[1] ?? null;
-$manualTo = $argv[2] ?? null;
-
+$requestedFrom = $argv[1] ?? null;
+$requestedTo = $argv[2] ?? null;
 $state = sync_load_state($stateFile);
 $now = time();
 
-if ($manualFrom) {
-    $from = sync_date($manualFrom);
-    if (!$from) die("Bad from date: {$manualFrom}\n");
-} elseif (!empty($state['last_successful_sync_at'])) {
-    $from = date('Y-m-d H:i:s', strtotime($state['last_successful_sync_at']) - $overlapSeconds);
-} else {
-    $from = date('Y-m-d H:i:s', $now - $defaultLookbackSeconds);
+if ($requestedFrom !== null) {
+    $forcedFrom = sync_date($requestedFrom);
+    if (!$forcedFrom) {
+        fwrite(STDERR, "Bad from date: {$requestedFrom}\n");
+        exit(1);
+    }
+    $forcedTo = $requestedTo !== null ? sync_date($requestedTo) : date('Y-m-d H:i:s', $now);
+    if (!$forcedTo || $forcedFrom > $forcedTo) {
+        fwrite(STDERR, "Bad or reversed to date\n");
+        exit(1);
+    }
+
+    // Repeating the same command resumes its saved window. An earlier date
+    // deliberately rewinds the window; a different later date cannot discard it.
+    if (!empty($state['pending']) && is_array($state['pending'])) {
+        $pendingFrom = $state['pending']['from'] ?? null;
+        if ($forcedFrom > $pendingFrom) {
+            fwrite(STDERR, "An earlier sync window is pending; run without dates to resume it\n");
+            exit(1);
+        }
+        if ($forcedFrom < $pendingFrom || ($requestedTo !== null && $forcedTo !== ($state['pending']['to'] ?? null))) {
+            $state['pending'] = ['from' => $forcedFrom, 'to' => $forcedTo, 'next_page' => 1];
+            sync_save_state($stateFile, $state);
+        }
+    } else {
+        $state['pending'] = ['from' => $forcedFrom, 'to' => $forcedTo, 'next_page' => 1];
+        sync_save_state($stateFile, $state);
+    }
+} elseif (empty($state['pending']) || !is_array($state['pending'])) {
+    $from = !empty($state['last_successful_sync_at'])
+        ? date('Y-m-d H:i:s', strtotime($state['last_successful_sync_at']) - $overlapSeconds)
+        : date('Y-m-d H:i:s', $now - $defaultLookbackSeconds);
+    $state['pending'] = [
+        'from' => $from,
+        'to' => date('Y-m-d H:i:s', $now),
+        'next_page' => 1,
+    ];
+    sync_save_state($stateFile, $state);
 }
 
-if ($manualTo) {
-    $to = sync_date($manualTo);
-    if (!$to) die("Bad to date: {$manualTo}\n");
-} else {
-    $to = date('Y-m-d H:i:s', $now);
-}
-
-if ($from > $to) {
-    die("From date is after to date\n");
+$from = $state['pending']['from'] ?? null;
+$to = $state['pending']['to'] ?? null;
+$page = (int)($state['pending']['next_page'] ?? 0);
+if (!$from || !$to || $from > $to || $page < 1) {
+    fwrite(STDERR, "Invalid pending sync window in state file\n");
+    exit(1);
 }
 
 echo "--- [SalesDrive UpdateAt Sync] Start ---\n";
-echo "Period: {$from} - {$to}\n";
+echo "Period: {$from} - {$to}; page {$page}\n";
 
 try {
     $pdo = new PDO(
@@ -163,13 +196,21 @@ try {
 }
 
 $stmt = null;
-$page = 1;
 $totalLoaded = 0;
 $failed = false;
 $completed = false;
+$pagesProcessed = 0;
 
 try {
     do {
+        $lastRequestAt = (int)($state['last_order_list_request_at'] ?? 0);
+        $waitSeconds = $minRequestIntervalSeconds - (time() - $lastRequestAt);
+        if ($waitSeconds > 0) {
+            echo "Waiting {$waitSeconds}s for SalesDrive request limit.\n";
+            sleep($waitSeconds);
+        }
+        $state['last_order_list_request_at'] = time();
+        sync_save_state($stateFile, $state);
         $json = sync_fetch_page($config, $from, $to, $page, $limit);
 
         if (!isset($json['data']) || !is_array($json['data'])) {
@@ -205,6 +246,7 @@ try {
         }
 
         $pdo->commit();
+        $pagesProcessed++;
         echo "Page {$page} synced ({$countOnPage} items). Total: {$totalLoaded}\n";
 
         $pageCount = $json['pagination']['pageCount'] ?? null;
@@ -218,7 +260,12 @@ try {
         if ($page > 10000) {
             throw new RuntimeException('SalesDrive API pagination did not finish after 10000 pages');
         }
-        usleep(200000);
+        $state['pending']['next_page'] = $page;
+        sync_save_state($stateFile, $state);
+        if ($pagesProcessed >= $maxPagesPerRun) {
+            echo "Page batch finished. Next run resumes at page {$page}.\n";
+            break;
+        }
     } while (true);
 } catch (Throwable $e) {
     $failed = true;
@@ -226,17 +273,19 @@ try {
     fwrite(STDERR, "Sync failed: " . $e->getMessage() . "\n");
 }
 
-if (!$failed && $completed && !$manualFrom) {
-    sync_save_state($stateFile, [
-        'last_successful_sync_at' => $to,
-        'last_started_at' => date('Y-m-d H:i:s', $now),
-        'last_finished_at' => date('Y-m-d H:i:s'),
-        'last_window_from' => $from,
-        'last_window_to' => $to,
-        'last_total_loaded' => $totalLoaded,
-    ]);
+if (!$failed && $completed) {
+    unset($state['pending']);
+    $state['last_successful_sync_at'] = $to;
+    $state['last_started_at'] = date('Y-m-d H:i:s', $now);
+    $state['last_finished_at'] = date('Y-m-d H:i:s');
+    $state['last_window_from'] = $from;
+    $state['last_window_to'] = $to;
+    $state['last_total_loaded'] = $totalLoaded;
+    sync_save_state($stateFile, $state);
 }
 
-echo "--- Done. Synced: {$totalLoaded} ---\n";
+echo $completed
+    ? "--- Complete. Synced this run: {$totalLoaded} ---\n"
+    : "--- Paused. Synced this run: {$totalLoaded} ---\n";
 exit($failed ? 1 : 0);
 
