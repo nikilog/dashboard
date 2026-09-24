@@ -18,9 +18,19 @@ require_once __DIR__ . '/salesdrive_order_mapper.php';
 
 $stateFile = __DIR__ . '/sync_orders_state.json';
 $limit = 41;
-$maxPagesPerRun = 1;
 $overlapSeconds = 3600;
 $defaultLookbackSeconds = 2 * 86400;
+
+// A long catch-up run must not overlap with the next cron invocation.
+$lockHandle = fopen(__DIR__ . '/sync_orders.lock', 'c');
+if ($lockHandle === false) {
+    fwrite(STDERR, "Cannot open sync lock file\n");
+    exit(1);
+}
+if (!flock($lockHandle, LOCK_EX | LOCK_NB)) {
+    echo "Sync is already running.\n";
+    exit(0);
+}
 
 function sync_date($value) {
     $ts = strtotime((string)$value);
@@ -156,13 +166,23 @@ $stmt = null;
 $page = 1;
 $totalLoaded = 0;
 $failed = false;
+$completed = false;
 
 try {
     do {
         $json = sync_fetch_page($config, $from, $to, $page, $limit);
 
+        if (!isset($json['data']) || !is_array($json['data'])) {
+            throw new RuntimeException("SalesDrive API response has no data array on page {$page}");
+        }
+
         if (empty($json['data'])) {
+            $pageCount = $json['pagination']['pageCount'] ?? null;
+            if ($pageCount !== null && $page < (int)$pageCount) {
+                throw new RuntimeException("SalesDrive API returned an empty page {$page} before page {$pageCount}");
+            }
             echo "No data on page {$page}.\n";
+            $completed = true;
             break;
         }
 
@@ -187,16 +207,17 @@ try {
         $pdo->commit();
         echo "Page {$page} synced ({$countOnPage} items). Total: {$totalLoaded}\n";
 
-        if ($page >= ($json['pagination']['pageCount'] ?? 1)) {
-            break;
-        }
-
-        if ($page >= $maxPagesPerRun) {
-            echo "Page limit per run reached ({$maxPagesPerRun}). Next cron run will continue from the next time window.\n";
+        $pageCount = $json['pagination']['pageCount'] ?? null;
+        if (($pageCount !== null && $page >= (int)$pageCount)
+            || ($pageCount === null && count($json['data']) < $limit)) {
+            $completed = true;
             break;
         }
 
         $page++;
+        if ($page > 10000) {
+            throw new RuntimeException('SalesDrive API pagination did not finish after 10000 pages');
+        }
         usleep(200000);
     } while (true);
 } catch (Throwable $e) {
@@ -205,7 +226,7 @@ try {
     fwrite(STDERR, "Sync failed: " . $e->getMessage() . "\n");
 }
 
-if (!$failed && !$manualFrom) {
+if (!$failed && $completed && !$manualFrom) {
     sync_save_state($stateFile, [
         'last_successful_sync_at' => $to,
         'last_started_at' => date('Y-m-d H:i:s', $now),
