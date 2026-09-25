@@ -228,6 +228,7 @@ function salesdrive_known_delivery_keys() {
         'egroup',
         'egrpou',
         'parentTtnNumber',
+        'shipping_costs',
     ];
 }
 
@@ -260,7 +261,14 @@ function salesdrive_known_product_keys() {
         'manufacturer',
         'keywords',
         'preSale',
+        'upsell',
         'isComplect',
+        'active',
+        'complect',
+        'photo',
+        'priceTypes',
+        'defaultPriceData',
+        'costPriceCurrencyId',
         'categoryId',
         'categoryName',
         'href',

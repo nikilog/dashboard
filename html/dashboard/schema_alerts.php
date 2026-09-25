@@ -53,7 +53,7 @@ function checkUnknownKeys(&$alerts, $prefix, $data, $known, $orderId) {
                 $alerts,
                 'unknown_json_field',
                 $prefix === '' ? (string)$key : $prefix . '.' . $key,
-                'SalesDrive sent a field that mapper does not know yet',
+                'SalesDrive sent a field not listed in diagnostics; the raw JSON is still stored',
                 $orderId,
                 $value
             );
