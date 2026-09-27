@@ -2,8 +2,8 @@
 
 return [
     'db_host' => '127.0.0.1',
-    'db_name' => 'salesdrive',
-    'db_user' => 'root',
+    'db_name' => 'dashboard',
+    'db_user' => 'dashboard',
     'db_pass' => 'Tvsc8585',
 
     'crm_api_base' => 'https://gusar.salesdrive.me/api/order/list/',

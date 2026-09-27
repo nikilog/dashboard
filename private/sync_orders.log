@@ -1,0 +1,533 @@
+PHP Warning:  file_get_contents(/var/www/private/APIKEY.txt): Failed to open stream: No such file or directory in /var/www/private/config.php on line 10
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-08-04 12:00:01 - 2026-09-24 20:30:01
+Sync failed: SalesDrive API error HTTP 401: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=41&filter[updateAt][from]=2026-08-04%2012%3A00%3A01&filter[updateAt][to]=2026-09-24%2020%3A30%3A01; Body: {"status":"error","message":"api key is invalid"}
+--- Done. Synced: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-08-01 00:00:00 - 2026-09-24 20:39:31; page 11
+Page 11 synced (100 items). Total: 100
+Waiting 118s for SalesDrive request limit.
+Page 12 synced (100 items). Total: 200
+Waiting 119s for SalesDrive request limit.
+Page 13 synced (100 items). Total: 300
+Waiting 119s for SalesDrive request limit.
+Page 14 synced (100 items). Total: 400
+Waiting 119s for SalesDrive request limit.
+Page 15 synced (100 items). Total: 500
+Waiting 119s for SalesDrive request limit.
+Page 16 synced (100 items). Total: 600
+Waiting 119s for SalesDrive request limit.
+Page 17 synced (100 items). Total: 700
+Waiting 119s for SalesDrive request limit.
+Page 18 synced (100 items). Total: 800
+Waiting 119s for SalesDrive request limit.
+Page 19 synced (100 items). Total: 900
+Waiting 120s for SalesDrive request limit.
+Page 20 synced (100 items). Total: 1000
+Page batch finished. Next run resumes at page 21.
+--- Paused. Synced this run: 1000 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-08-01 00:00:00 - 2026-09-24 20:39:31; page 21
+Page 21 synced (100 items). Total: 100
+Waiting 118s for SalesDrive request limit.
+Page 22 synced (100 items). Total: 200
+Waiting 119s for SalesDrive request limit.
+Page 23 synced (100 items). Total: 300
+Waiting 119s for SalesDrive request limit.
+Page 24 synced (100 items). Total: 400
+Waiting 119s for SalesDrive request limit.
+Page 25 synced (100 items). Total: 500
+Waiting 119s for SalesDrive request limit.
+Page 26 synced (100 items). Total: 600
+Waiting 119s for SalesDrive request limit.
+Page 27 synced (100 items). Total: 700
+Waiting 119s for SalesDrive request limit.
+Page 28 synced (100 items). Total: 800
+Waiting 119s for SalesDrive request limit.
+Page 29 synced (100 items). Total: 900
+Waiting 119s for SalesDrive request limit.
+Page 30 synced (100 items). Total: 1000
+Page batch finished. Next run resumes at page 31.
+--- Paused. Synced this run: 1000 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-08-01 00:00:00 - 2026-09-24 20:39:31; page 31
+Page 31 synced (100 items). Total: 100
+Waiting 119s for SalesDrive request limit.
+Page 32 synced (100 items). Total: 200
+Waiting 119s for SalesDrive request limit.
+Page 33 synced (100 items). Total: 300
+Waiting 119s for SalesDrive request limit.
+Page 34 synced (22 items). Total: 322
+--- Complete. Synced this run: 322 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-24 19:39:31 - 2026-09-24 22:30:01; page 1
+Page 1 synced (2 items). Total: 2
+--- Complete. Synced this run: 2 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-24 21:30:01 - 2026-09-24 23:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-24 22:00:01 - 2026-09-24 23:30:02; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-24 22:30:02 - 2026-09-25 00:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-24 23:00:01 - 2026-09-25 00:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-24 23:30:01 - 2026-09-25 01:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 00:00:01 - 2026-09-25 01:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 00:30:01 - 2026-09-25 02:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 01:00:01 - 2026-09-25 02:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 01:30:01 - 2026-09-25 03:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 02:00:01 - 2026-09-25 03:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 02:30:01 - 2026-09-25 04:00:02; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 03:00:02 - 2026-09-25 04:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 03:30:01 - 2026-09-25 05:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 04:00:01 - 2026-09-25 05:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 04:30:01 - 2026-09-25 06:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 05:00:01 - 2026-09-25 06:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 05:30:01 - 2026-09-25 07:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 06:00:01 - 2026-09-25 07:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 06:30:01 - 2026-09-25 08:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 07:00:01 - 2026-09-25 08:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 07:30:01 - 2026-09-25 09:00:01; page 1
+Page 1 synced (4 items). Total: 4
+--- Complete. Synced this run: 4 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 08:00:01 - 2026-09-25 09:30:01; page 1
+Page 1 synced (20 items). Total: 20
+--- Complete. Synced this run: 20 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 08:30:01 - 2026-09-25 10:00:01; page 1
+Page 1 synced (45 items). Total: 45
+--- Complete. Synced this run: 45 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 09:00:01 - 2026-09-25 10:30:01; page 1
+Page 1 synced (56 items). Total: 56
+--- Complete. Synced this run: 56 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 09:30:01 - 2026-09-25 11:00:01; page 1
+Page 1 synced (56 items). Total: 56
+--- Complete. Synced this run: 56 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 10:00:01 - 2026-09-25 11:30:02; page 1
+Page 1 synced (33 items). Total: 33
+--- Complete. Synced this run: 33 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 10:30:02 - 2026-09-25 12:00:01; page 1
+Page 1 synced (24 items). Total: 24
+--- Complete. Synced this run: 24 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 11:00:01 - 2026-09-25 12:30:01; page 1
+Page 1 synced (26 items). Total: 26
+--- Complete. Synced this run: 26 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 11:30:01 - 2026-09-25 13:00:01; page 1
+Page 1 synced (37 items). Total: 37
+--- Complete. Synced this run: 37 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 12:00:01 - 2026-09-25 13:30:01; page 1
+Page 1 synced (33 items). Total: 33
+--- Complete. Synced this run: 33 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 12:30:01 - 2026-09-25 14:00:02; page 1
+Page 1 synced (16 items). Total: 16
+--- Complete. Synced this run: 16 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 13:00:02 - 2026-09-25 14:30:01; page 1
+Page 1 synced (13 items). Total: 13
+--- Complete. Synced this run: 13 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 13:30:01 - 2026-09-25 15:00:01; page 1
+Page 1 synced (23 items). Total: 23
+--- Complete. Synced this run: 23 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 14:00:01 - 2026-09-25 15:30:01; page 1
+Page 1 synced (43 items). Total: 43
+--- Complete. Synced this run: 43 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 14:30:01 - 2026-09-25 16:00:01; page 1
+Page 1 synced (55 items). Total: 55
+--- Complete. Synced this run: 55 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 15:00:01 - 2026-09-25 16:30:01; page 1
+Page 1 synced (50 items). Total: 50
+--- Complete. Synced this run: 50 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 15:30:01 - 2026-09-25 17:00:02; page 1
+Page 1 synced (52 items). Total: 52
+--- Complete. Synced this run: 52 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 16:00:02 - 2026-09-25 17:30:01; page 1
+Page 1 synced (31 items). Total: 31
+--- Complete. Synced this run: 31 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 16:30:01 - 2026-09-25 18:00:01; page 1
+Page 1 synced (35 items). Total: 35
+--- Complete. Synced this run: 35 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 17:00:01 - 2026-09-25 18:30:01; page 1
+Page 1 synced (18 items). Total: 18
+--- Complete. Synced this run: 18 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 17:30:01 - 2026-09-25 19:00:01; page 1
+Page 1 synced (22 items). Total: 22
+--- Complete. Synced this run: 22 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 18:00:01 - 2026-09-25 19:30:01; page 1
+Page 1 synced (20 items). Total: 20
+--- Complete. Synced this run: 20 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 18:30:01 - 2026-09-25 20:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-25%2018%3A30%3A01&filter[updateAt][to]=2026-09-25%2020%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 18:30:01 - 2026-09-25 20:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-25%2018%3A30%3A01&filter[updateAt][to]=2026-09-25%2020%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 18:30:01 - 2026-09-25 20:00:01; page 1
+Page 1 synced (16 items). Total: 16
+--- Complete. Synced this run: 16 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 19:00:01 - 2026-09-25 21:30:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-25%2019%3A00%3A01&filter[updateAt][to]=2026-09-25%2021%3A30%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 19:00:01 - 2026-09-25 21:30:01; page 1
+Page 1 synced (12 items). Total: 12
+--- Complete. Synced this run: 12 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 20:30:01 - 2026-09-25 22:30:01; page 1
+Page 1 synced (1 items). Total: 1
+--- Complete. Synced this run: 1 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 21:30:01 - 2026-09-25 23:00:01; page 1
+Page 1 synced (1 items). Total: 1
+--- Complete. Synced this run: 1 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 22:00:01 - 2026-09-25 23:30:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-25%2022%3A00%3A01&filter[updateAt][to]=2026-09-25%2023%3A30%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 22:00:01 - 2026-09-25 23:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 22:30:01 - 2026-09-26 00:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-25 23:30:01 - 2026-09-26 01:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 00:00:01 - 2026-09-26 01:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 00:30:01 - 2026-09-26 02:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 01:00:01 - 2026-09-26 02:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 01:30:01 - 2026-09-26 03:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2001%3A30%3A01&filter[updateAt][to]=2026-09-26%2003%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 01:30:01 - 2026-09-26 03:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 02:00:01 - 2026-09-26 04:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2002%3A00%3A01&filter[updateAt][to]=2026-09-26%2004%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 02:00:01 - 2026-09-26 04:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 03:00:01 - 2026-09-26 05:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 04:00:01 - 2026-09-26 05:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 04:30:01 - 2026-09-26 06:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 05:00:01 - 2026-09-26 06:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 05:30:01 - 2026-09-26 07:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 06:00:01 - 2026-09-26 07:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 06:30:01 - 2026-09-26 08:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 07:00:01 - 2026-09-26 08:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 07:30:01 - 2026-09-26 09:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 08:00:01 - 2026-09-26 09:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 08:30:01 - 2026-09-26 10:00:01; page 1
+Page 1 synced (1 items). Total: 1
+--- Complete. Synced this run: 1 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 09:00:01 - 2026-09-26 10:30:01; page 1
+Page 1 synced (2 items). Total: 2
+--- Complete. Synced this run: 2 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 09:30:01 - 2026-09-26 11:00:01; page 1
+Page 1 synced (8 items). Total: 8
+--- Complete. Synced this run: 8 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 10:00:01 - 2026-09-26 11:30:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2010%3A00%3A01&filter[updateAt][to]=2026-09-26%2011%3A30%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 10:00:01 - 2026-09-26 11:30:01; page 1
+Page 1 synced (10 items). Total: 10
+--- Complete. Synced this run: 10 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 10:30:01 - 2026-09-26 12:30:01; page 1
+Page 1 synced (11 items). Total: 11
+--- Complete. Synced this run: 11 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 11:30:01 - 2026-09-26 13:00:01; page 1
+Page 1 synced (4 items). Total: 4
+--- Complete. Synced this run: 4 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 12:00:01 - 2026-09-26 13:30:01; page 1
+Page 1 synced (5 items). Total: 5
+--- Complete. Synced this run: 5 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 12:30:01 - 2026-09-26 14:00:01; page 1
+Page 1 synced (9 items). Total: 9
+--- Complete. Synced this run: 9 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 13:00:01 - 2026-09-26 14:30:01; page 1
+Page 1 synced (8 items). Total: 8
+--- Complete. Synced this run: 8 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 13:30:01 - 2026-09-26 15:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2013%3A30%3A01&filter[updateAt][to]=2026-09-26%2015%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 13:30:01 - 2026-09-26 15:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2013%3A30%3A01&filter[updateAt][to]=2026-09-26%2015%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 13:30:01 - 2026-09-26 15:00:01; page 1
+Page 1 synced (6 items). Total: 6
+--- Complete. Synced this run: 6 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 14:00:01 - 2026-09-26 16:30:01; page 1
+Page 1 synced (8 items). Total: 8
+--- Complete. Synced this run: 8 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 15:30:01 - 2026-09-26 17:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2015%3A30%3A01&filter[updateAt][to]=2026-09-26%2017%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 15:30:01 - 2026-09-26 17:00:01; page 1
+Page 1 synced (5 items). Total: 5
+--- Complete. Synced this run: 5 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 16:00:01 - 2026-09-26 18:00:01; page 1
+Page 1 synced (7 items). Total: 7
+--- Complete. Synced this run: 7 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 17:00:01 - 2026-09-26 18:30:01; page 1
+Page 1 synced (5 items). Total: 5
+--- Complete. Synced this run: 5 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 17:30:01 - 2026-09-26 19:00:01; page 1
+Page 1 synced (8 items). Total: 8
+--- Complete. Synced this run: 8 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 18:00:01 - 2026-09-26 19:30:01; page 1
+Page 1 synced (5 items). Total: 5
+--- Complete. Synced this run: 5 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 18:30:01 - 2026-09-26 20:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2018%3A30%3A01&filter[updateAt][to]=2026-09-26%2020%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 18:30:01 - 2026-09-26 20:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2018%3A30%3A01&filter[updateAt][to]=2026-09-26%2020%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 18:30:01 - 2026-09-26 20:00:01; page 1
+Page 1 synced (3 items). Total: 3
+--- Complete. Synced this run: 3 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 19:00:01 - 2026-09-26 21:30:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2019%3A00%3A01&filter[updateAt][to]=2026-09-26%2021%3A30%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 19:00:01 - 2026-09-26 21:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 20:30:01 - 2026-09-26 22:30:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2020%3A30%3A01&filter[updateAt][to]=2026-09-26%2022%3A30%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 20:30:01 - 2026-09-26 22:30:01; page 1
+Page 1 synced (2 items). Total: 2
+--- Complete. Synced this run: 2 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 21:30:01 - 2026-09-26 23:30:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2021%3A30%3A01&filter[updateAt][to]=2026-09-26%2023%3A30%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 21:30:01 - 2026-09-26 23:30:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-26%2021%3A30%3A01&filter[updateAt][to]=2026-09-26%2023%3A30%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 21:30:01 - 2026-09-26 23:30:01; page 1
+Page 1 synced (2 items). Total: 2
+--- Complete. Synced this run: 2 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-26 22:30:01 - 2026-09-27 01:00:02; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 00:00:02 - 2026-09-27 01:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 00:30:01 - 2026-09-27 02:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 01:00:01 - 2026-09-27 02:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 01:30:01 - 2026-09-27 03:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-27%2001%3A30%3A01&filter[updateAt][to]=2026-09-27%2003%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 01:30:01 - 2026-09-27 03:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 02:00:01 - 2026-09-27 04:00:01; page 1
+Sync failed: SalesDrive API error HTTP 400: ; URL: https://gusar.salesdrive.me/api/order/list/?page=1&limit=100&filter[updateAt][from]=2026-09-27%2002%3A00%3A01&filter[updateAt][to]=2026-09-27%2004%3A00%3A01&filter[statusId]=__ALL__; Body: {"status":"error","message":"API limit reached. API method: \"/api/order/list/\". API period: 24 hour. API limit: 1000."}
+--- Paused. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 02:00:01 - 2026-09-27 04:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 03:00:01 - 2026-09-27 05:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 04:00:01 - 2026-09-27 05:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 04:30:01 - 2026-09-27 06:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 05:00:01 - 2026-09-27 06:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 05:30:01 - 2026-09-27 07:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 06:00:01 - 2026-09-27 07:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 06:30:01 - 2026-09-27 08:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 07:00:01 - 2026-09-27 08:30:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---
+--- [SalesDrive UpdateAt Sync] Start ---
+Period: 2026-09-27 07:30:01 - 2026-09-27 09:00:01; page 1
+No data on page 1.
+--- Complete. Synced this run: 0 ---

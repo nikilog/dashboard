@@ -1,8 +1,9 @@
 {
-    "last_successful_sync_at": "2026-08-04 13:00:01",
-    "last_started_at": "2026-08-04 13:00:01",
-    "last_finished_at": "2026-08-04 13:00:02",
-    "last_window_from": "2026-08-04 11:00:01",
-    "last_window_to": "2026-08-04 13:00:01",
-    "last_total_loaded": 21
+    "last_successful_sync_at": "2026-09-27 09:00:01",
+    "last_started_at": "2026-09-27 09:00:01",
+    "last_finished_at": "2026-09-27 09:00:02",
+    "last_window_from": "2026-09-27 07:30:01",
+    "last_window_to": "2026-09-27 09:00:01",
+    "last_total_loaded": 0,
+    "last_order_list_request_at": 1790499601
 }
