@@ -1,5 +1,5 @@
 <?php
-// Backfills newly added order columns from orders.full_json.
+// Backfills missing order columns from orders.full_json without replacing existing values.
 // Usage: php backfill_orders_from_json.php [batch_size]
 
 if (php_sapi_name() !== 'cli') {
@@ -20,7 +20,9 @@ $columns = [
     'form_id',
     'version',
     'order_number',
+    'update_at',
     'payment_date',
+    'order_type_id',
     'cost_price_amount',
     'debt_amount',
     'stock_id',
@@ -66,7 +68,7 @@ try {
     die("DB connection error: " . $e->getMessage() . "\n");
 }
 
-$setSql = implode(', ', array_map(fn($c) => "`$c` = :$c", $columns));
+$setSql = implode(', ', array_map(fn($c) => "`$c` = COALESCE(`$c`, :$c)", $columns));
 $update = $pdo->prepare("UPDATE `orders` SET $setSql WHERE `id` = :id");
 $select = $pdo->prepare("SELECT `id`, `full_json` FROM `orders` WHERE `id` > :last_id AND `full_json` IS NOT NULL ORDER BY `id` ASC LIMIT $batchSize");
 
